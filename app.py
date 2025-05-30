@@ -1,11 +1,11 @@
 import os
 from datetime import datetime
 
-# Please customize the following variables 
+# Please customize the following variables
 USER_NAME = "ydongdyc"
 VERSION = "1.0.0"
 
-def say_hi(msg: str = "Hi!", file_directory: str = "/app/data/") -> None:
+def say_hi(msg: str = "Hi!", file_directory: str = "/app/data/") -> str:
     # Generate timestamp
     timestamp = datetime.now().strftime("%Y%m%d%H%M")
 
@@ -18,6 +18,7 @@ def say_hi(msg: str = "Hi!", file_directory: str = "/app/data/") -> None:
         file.write(msg)
 
     print(f"File '{file_path}' created successfully.")
+    return file_path
 
 def add_numbers(a: int, b: int) -> int:
     return a + b

@@ -2,6 +2,7 @@ import os
 from datetime import datetime
 
 # Please customize the following variables 
+
 USER_NAME = "ydong"
 VERSION = "1.0.0"
 
@@ -10,6 +11,8 @@ def say_hi(msg: str = "Hi!", file_directory: str = "/app/data/") -> None:
     file_name = f"outputfile_{USER_NAME}_{VERSION}_timestamp_{timestamp}.txt"
     file_path = os.path.join(file_directory, file_name)
 
+
+    # Write the message inside the file
 
     with open(file_path, "w") as file:
         file.write(msg)

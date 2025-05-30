@@ -1,10 +1,5 @@
 name: Deploy Docker Image to Server
 
-# Required to access the workflow run details
-permissions:
-  contents: read
-  actions: read
-
 on:
   workflow_run:
     workflows: ["Build and Push Docker Image"]
@@ -14,9 +9,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    # Only run if the build workflow completed successfully
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
-
     steps:
       - name: Deploy to Linux server
         uses: appleboy/ssh-action@v1.0.3

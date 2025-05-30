@@ -21,6 +21,7 @@ jobs:
             docker pull ${{ secrets.DOCKER_USERNAME }}/mleng_sayhi:latest
             docker stop mleng_sayhi || true
             docker rm mleng_sayhi || true
+
             docker run -d --name mleng_sayhi \
               -v /opt/assignment_outputs:/app/data \
               ${{ secrets.DOCKER_USERNAME }}/mleng_sayhi:latest
